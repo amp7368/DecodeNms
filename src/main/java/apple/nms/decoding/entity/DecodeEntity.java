@@ -1,8 +1,10 @@
 package apple.nms.decoding.entity;
 
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityInsentient;
 import net.minecraft.world.entity.EntityLiving;
+import net.minecraft.world.entity.ai.control.ControllerLook;
 import net.minecraft.world.entity.ai.goal.PathfinderGoalSelector;
 
 public class DecodeEntity {
@@ -44,5 +46,21 @@ public class DecodeEntity {
 
     public static void setHurtTimestamp(EntityLiving entity, int newhurtTimestamp) {
         entity.bX = newhurtTimestamp;
+    }
+
+    public static boolean do_d(Entity entity, NBTTagCompound nbt) {
+        return entity.d(nbt);
+    }
+
+    public static void setXMove(EntityInsentient entity, float x) {
+        entity.u(x);
+    }
+
+    public static void setYMove(EntityInsentient entity, float y) {
+        entity.v(y);
+    }
+
+    public static void setZMove(EntityInsentient entity, float z) {
+        entity.w(z);
     }
 }
