@@ -16,5 +16,5 @@ public class DecodeGenericAttributes {
     public static final AttributeBase ARMOR_TOUGHNESS = GenericAttributes.j;
     public static final AttributeBase LUCK = GenericAttributes.k;
     public static final AttributeBase SPAWN_REINFORCEMENTS = GenericAttributes.l;
-    public static final AttributeBase HORSE_JUMP_STRENGTH = GenericAttributes.m;
+    public static final AttributeBase JUMP_STRENGTH = GenericAttributes.m;
 }

@@ -4,6 +4,7 @@ import net.minecraft.world.entity.EntityAreaEffectCloud;
 import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.animal.EntityIronGolem;
 import net.minecraft.world.entity.animal.horse.EntityHorse;
+import net.minecraft.world.entity.decoration.EntityArmorStand;
 import net.minecraft.world.entity.monster.*;
 
 public class DecodeEntityTypes {
@@ -16,4 +17,6 @@ public class DecodeEntityTypes {
     public final static EntityTypes<EntitySkeleton> SKELETON = EntityTypes.aB;
     public final static EntityTypes<EntityHorse> HORSE = EntityTypes.M;
     public final static EntityTypes<EntityAreaEffectCloud> AREA_EFFECT_CLOUD = EntityTypes.b;
+    public final static EntityTypes<EntityArmorStand> ARMOR_STAND = EntityTypes.c;
+    public final static EntityTypes<EntityArmorStand> ENDERMAN = EntityTypes.c;
 }

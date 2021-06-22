@@ -30,6 +30,7 @@ test {
     useJUnitPlatform()
 }
 jar {
-//    destinationDirectory = new File('C:\\Users\\Aaron\\Desktop\\server\\plugins\\')
-    destinationDirectory = new File('C:\\Users\\Aaron\\Desktop\\Idea\\Minecraft\\Plugins\\Volts\\VoltskiyaCustomMobs\\lib')
+    destinationDirectory = new File('C:\\Users\\Aaron\\Desktop\\server\\plugins\\')
+//    destinationDirectory = new File('C:\\Users\\Aaron\\Desktop\\Idea\\Minecraft\\Plugins\\Volts\\VoltskiyaEssen\\lib')
+//    destinationDirectory = new File('C:\\Users\\Aaron\\Desktop\\Idea\\Minecraft\\Plugins\\Volts\\VoltskiyaCustomMobs\\lib')
 }

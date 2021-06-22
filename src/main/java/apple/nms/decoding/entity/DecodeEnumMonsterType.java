@@ -1,9 +1,8 @@
 package apple.nms.decoding.entity;
 
-import net.minecraft.world.entity.EnumCreatureType;
 import net.minecraft.world.entity.EnumMonsterType;
 
-public enum DecodeMonsterType {
+public enum DecodeEnumMonsterType {
     UNDEFINED(EnumMonsterType.a),
     UNDEAD(EnumMonsterType.b),
     ARTHROPOD(EnumMonsterType.c),
@@ -11,7 +10,7 @@ public enum DecodeMonsterType {
     WATER_MOB(EnumMonsterType.e);
     private final EnumMonsterType encoded;
 
-    DecodeMonsterType(EnumMonsterType encoded) {
+    DecodeEnumMonsterType(EnumMonsterType encoded) {
         this.encoded = encoded;
     }
 
