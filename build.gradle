@@ -19,18 +19,44 @@ configurations.all {
     resolutionStrategy.cacheChangingModulesFor 1, 'seconds'
 }
 dependencies {
-    compileOnly 'io.papermc.paper:paper-api:1.17-R0.1-SNAPSHOT'
-//    compileOnly 'org.spigotmc:spigot:1.16.5-R0.1-SNAPSHOT'
-    compileOnly 'org.spigotmc:spigot:1.17-R0.1-SNAPSHOT'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    compileOnly 'io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT'
+    compileOnly 'org.spigotmc:spigot:1.17.1-R0.1-SNAPSHOT'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
 }
 
 test {
     useJUnitPlatform()
 }
+
 jar {
     destinationDirectory = new File('C:\\Users\\Aaron\\Desktop\\server\\plugins\\')
-//    destinationDirectory = new File('C:\\Users\\Aaron\\Desktop\\Idea\\Minecraft\\Plugins\\Volts\\VoltskiyaEssen\\lib')
-//    destinationDirectory = new File('C:\\Users\\Aaron\\Desktop\\Idea\\Minecraft\\Plugins\\Volts\\VoltskiyaCustomMobs\\lib')
+}
+
+def filesToCopy = copySpec {
+    from jar.getArchiveFile()
+}
+
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor 20, 'seconds'
+    resolutionStrategy.cacheChangingModulesFor  20, 'seconds'
+}
+
+task jarAndCopyFiles {
+    outputs.upToDateWhen { false }
+    dependsOn(jar)
+    doLast {
+        ['C:\\Users\\Aaron\\Desktop\\Idea\\Minecraft\\Volts\\VoltskiyaDungeons\\lib\\',
+        'C:\\Users\\Aaron\\Desktop\\Idea\\Minecraft\\Volts\\VoltskiyaCustomMobs\\lib\\',
+         'C:\\Users\\Aaron\\Desktop\\Idea\\Minecraft\\Volts\\VoltskiyaAppleMisc\\lib\\',
+         'C:\\Users\\Aaron\\Desktop\\Idea\\Minecraft\\Volts\\VoltskiyaGameMechanics\\lib\\',
+         'C:\\Users\\Aaron\\Desktop\\Idea\\Minecraft\\Volts\\VoltskiyaEssen\\lib\\'].each { dest ->
+            {
+                copy {
+                    with filesToCopy
+                    into dest
+                }
+            }
+        }
+    }
 }

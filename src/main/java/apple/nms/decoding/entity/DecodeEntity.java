@@ -4,7 +4,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityInsentient;
 import net.minecraft.world.entity.EntityLiving;
-import net.minecraft.world.entity.ai.control.ControllerLook;
 import net.minecraft.world.entity.ai.goal.PathfinderGoalSelector;
 
 public class DecodeEntity {
@@ -17,19 +16,19 @@ public class DecodeEntity {
     }
 
     public static PathfinderGoalSelector getGoalSelector(EntityInsentient entity) {
-        return entity.bO;
-    }
-
-    public static PathfinderGoalSelector getTargetSelector(EntityInsentient entity) {
         return entity.bP;
     }
 
+    public static PathfinderGoalSelector getTargetSelector(EntityInsentient entity) {
+        return entity.bQ;
+    }
+
     public static void setGoalSelector(EntityInsentient entity, PathfinderGoalSelector newGoalSelector) {
-        entity.bO = newGoalSelector;
+        entity.bP = newGoalSelector;
     }
 
     public static void setTargetSelector(EntityInsentient entity, PathfinderGoalSelector newTargetSelector) {
-        entity.bP = newTargetSelector;
+        entity.bQ = newTargetSelector;
     }
 
     public static int getTicksLived(EntityLiving entity) {
@@ -62,5 +61,11 @@ public class DecodeEntity {
 
     public static void setZMove(EntityInsentient entity, float z) {
         entity.w(z);
+    }
+
+    public static NBTTagCompound saveWithId(Entity entity) {
+        final NBTTagCompound nbttagcompound = new NBTTagCompound();
+        entity.d(nbttagcompound);
+        return nbttagcompound;
     }
 }
